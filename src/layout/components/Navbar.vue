@@ -51,7 +51,6 @@ export default {
   width: 100%;
   height: 60px;
   overflow: hidden;
-  position: relative;
   background-image: url(~@/assets/common/backgroundone.png);
   background-size: cover;
   background-repeat: no-repeat;

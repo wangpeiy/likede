@@ -2,9 +2,10 @@
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
-    <div :class="{'fixed-header':fixedHeader}">
+    <div :class="{'fixed-header':false}">
       <navbar />
     </div>
+
     <div class="main-container">
       <app-main />
     </div>
@@ -35,10 +36,10 @@ export default {
     },
     classObj() {
       return {
-        hideSidebar: !this.sidebar.opened,
-        openSidebar: this.sidebar.opened,
-        withoutAnimation: this.sidebar.withoutAnimation,
-        mobile: this.device === 'mobile'
+        // hideSidebar: !this.sidebar.opened,
+        openSidebar: this.sidebar.opened
+        // withoutAnimation: this.sidebar.withoutAnimation,
+        // mobile: this.device === 'mobile'
       }
     }
   },
@@ -79,7 +80,8 @@ export default {
     top: 0;
     right: 0;
     z-index: 9;
-    width: calc(100% - #{$sideBarWidth});
+    // width: calc(100% - #{$sideBarWidth});
+    width: 100%;
     transition: width 0.28s;
   }
 
